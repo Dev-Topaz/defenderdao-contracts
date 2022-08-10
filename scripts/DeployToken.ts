@@ -31,7 +31,7 @@ async function main() {
   if (balance < 0.01) {
     throw new Error('Not enough ether');
   }
-  console.log('Deploying MyToken contract');
+  console.log('Deploying DefenderToken contract');
   const tokenFactory = new ethers.ContractFactory(
     DefenderTokenJson.abi,
     DefenderTokenJson.bytecode,
