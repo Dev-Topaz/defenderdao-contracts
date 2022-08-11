@@ -16,16 +16,25 @@ GovernorVotes,
 GovernorVotesQuorumFraction, 
 GovernorTimelockControl 
 {
-    constructor(IVotes _token, TimelockController _timelock)
+    constructor(
+        IVotes _token,
+        TimelockController _timelock,
+        uint256 _quorumPercentage,
+        uint256 _votingPeriod,
+        uint256 _votingDelay
+        )
         Governor("DefenderGovernor")
         GovernorSettings(
-        1 /* 1 block */,
-        6545 /* 1 day */,
-        0)
+        _votingDelay, /* 1 block */
+        _votingPeriod,/* 1 day */
+        0
+        )
         GovernorVotes(_token)
-        GovernorVotesQuorumFraction(5)
+        GovernorVotesQuorumFraction(_quorumPercentage)
         GovernorTimelockControl(_timelock)
-    {}
+    {
+
+    }
 
     // The following functions are overrides required by Solidity.
 

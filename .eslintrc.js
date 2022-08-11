@@ -2,9 +2,14 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    mocha: true,
+    node: true,
   },
   extends: [
-    'airbnb-base',
+    "standard",
+    "plugin:prettier/recommended",
+    // "plugin:node/recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -15,4 +20,12 @@ module.exports = {
   ],
   rules: {
   },
+  
+  "prettier/prettier": [
+    "error",
+    {
+      endOfLine: "auto",
+    },
+  ],
+  
 };
